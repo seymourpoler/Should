@@ -20,13 +20,35 @@ namespace Should.Unit.Tests
 
 		[Test]
 		[ExpectedException(typeof(ContainsException))]
-		public void ThrowsIfContains()
+		public void ThrowsIfNotContains()
 		{
 			var message = "the text";
 
 			message.ShouldContain ("one, two");
 
 			throw new AssertionException ("Assertion fails");
-		}}
+		}
+
+		[Test]
+		public void ReturnsTrueIfStartsWith()
+		{
+			var message = "the text";
+
+			message.ShouldStartWith ("the ");
+
+			Assert.IsTrue(true);
+		}
+
+		[Test]
+		[ExpectedException(typeof(StartsWithException))]
+		public void ThrowsIfNotStartsWith()
+		{
+			var message = "the text";
+
+			message.ShouldStartWith ("one, ");
+
+			throw new AssertionException ("Assertion fails");
+		}
+	}
 }
 
