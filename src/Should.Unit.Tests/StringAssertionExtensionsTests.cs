@@ -9,7 +9,7 @@ namespace Should.Unit.Tests
 	public class StringAssertionExtensionsTests
 	{
 		[Test]
-		public void ReturnsTrueIfContains()
+		public void ReturnsPositionIfContains()
 		{
 			var message = "the text";
 
@@ -20,7 +20,7 @@ namespace Should.Unit.Tests
 
 		[Test]
 		[ExpectedException(typeof(ContainsException))]
-		public void ThrowsIfNotContains()
+		public void ThrowsExceptionWhenNotContains()
 		{
 			var message = "the text";
 
@@ -30,7 +30,38 @@ namespace Should.Unit.Tests
 		}
 
 		[Test]
-		public void ReturnsTrueIfStartsWith()
+		public void ShouldNotContains()
+		{
+			var message = "the text";
+
+			message.ShouldNotContain ("aqswdefr");
+
+			Assert.IsTrue(true);
+		}
+
+		[Test]
+		[ExpectedException(typeof(DoesNotContainException))]
+		public void ThrowsExceptionWhenContains()
+		{
+			var message = "the text";
+
+			message.ShouldNotContain ("the ");
+
+			throw new AssertionException ("Assertion fails");
+		}
+
+		[Test]
+		public void ShouldNotContain()
+		{
+			var message = "the text";
+
+			message.ShouldNotContain ("aqswdefr");
+
+			Assert.IsTrue(true);
+		}
+
+		[Test]
+		public void ShouldStartWith()
 		{
 			var message = "the text";
 
@@ -41,7 +72,7 @@ namespace Should.Unit.Tests
 
 		[Test]
 		[ExpectedException(typeof(StartsWithException))]
-		public void ThrowsIfNotStartsWith()
+		public void ThrowsExceptionWhenDoesNotStartsWith()
 		{
 			var message = "the text";
 
