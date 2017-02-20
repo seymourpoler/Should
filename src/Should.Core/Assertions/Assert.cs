@@ -234,6 +234,7 @@ namespace Should.Core.Assertions
         /// <param name="actual">The value to be compared against</param>
         /// <param name="comparer">The comparer used to compare the two objects</param>
         /// <exception cref="EqualException">Thrown when the objects are not equal</exception>
+		/// <param name = "userMessage"></param>
         public static void Equal<T>(T expected,
                                     T actual,
                                     IEqualityComparer<T> comparer,
