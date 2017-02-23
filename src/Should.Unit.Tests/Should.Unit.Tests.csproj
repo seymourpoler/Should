@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="StringAssertionExtensionsTests.cs" />
     <Compile Include="ActionAssertionExtensionsTests.cs" />
+    <Compile Include="BooleanAssertionExtensionsTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\should\Should.csproj">
