@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using Should.Core.Exceptions;
 
 namespace Should.Unit.Tests
 {
@@ -8,6 +9,13 @@ namespace Should.Unit.Tests
 		[Test]
 		public void ShouldBeFalse(){
 			false.ShouldBeFalse ();
+		}
+
+		[Test]
+		[ExpectedException(typeof(FalseException))]
+		public void ThrowsFalseException()
+		{
+			true.ShouldBeFalse ();
 		}
 	}
 }
