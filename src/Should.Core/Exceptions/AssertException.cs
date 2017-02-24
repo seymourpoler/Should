@@ -59,7 +59,7 @@ namespace Should.Core.Exceptions
         /// <summary>
         /// Gets the user message
         /// </summary>
-        public string UserMessage { get; protected set; }
+        public string UserMessage { get; private set; }
 
         /// <summary>
         /// Filters the stack trace to remove all lines that occur within the testing framework.

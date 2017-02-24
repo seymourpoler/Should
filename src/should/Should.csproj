@@ -43,7 +43,8 @@
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="ActionAssertionExtensions.cs" />
-    <Compile Include="BooleanAssertionExtensions.cs" />
+    <Compile Include="BooleanAssertionExtensions\ShouldBeFalse.cs" />
+    <Compile Include="BooleanAssertionExtensions\ShouldBeTrue.cs" />
     <Compile Include="CollectionAssertionExtensions.cs" />
     <Compile Include="DateAssertionExtensions.cs" />
     <Compile Include="DoubleAssertionExtensions.cs" />
@@ -52,7 +53,6 @@
     <Compile Include="StringAssertionExtensions\ShouldNotContain.cs" />
     <Compile Include="StringAssertionExtensions\ShouldContain.cs" />
     <Compile Include="StringAssertionExtensions\ShouldNotStartWith.cs" />
-    <Compile Include="BooleanAssertionExtensions\ShouldBeTrue.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Should.Core\Should.Core.csproj">
@@ -72,4 +72,5 @@
     <Folder Include="StringAssertionExtensions\" />
     <Folder Include="BooleanAssertionExtensions\" />
   </ItemGroup>
+  <ItemGroup />
 </Project>

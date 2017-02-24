@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Should.Core.Exceptions;
 
 namespace Should.Core.Assertions
@@ -49,10 +50,10 @@ namespace Should.Core.Assertions
         /// <exception cref="ContainsException">Thrown when the object is not present in the collection</exception>
         public static void Contains<T>(T expected, IEnumerable<T> collection, IEqualityComparer<T> comparer)
         {
-            foreach (T item in collection)
-                if (comparer.Equals(expected, item))
-                    return;
-
+            if (collection.Any(item => comparer.Equals(expected, item)))
+            {
+                return;
+            }
             throw new ContainsException(expected);
         }
 
@@ -79,7 +80,7 @@ namespace Should.Core.Assertions
                                     string actualString,
                                     StringComparison comparisonType)
         {
-            int indexOf = actualString.IndexOf(expectedSubString, comparisonType);
+            var indexOf = actualString.IndexOf(expectedSubString, comparisonType);
 
             if (indexOf < 0)
                 throw new ContainsException(expectedSubString);
@@ -95,8 +96,9 @@ namespace Should.Core.Assertions
         /// <exception cref="StartsWithException">Thrown when the sub-string is not present at the start of the string</exception>
         public static void StartsWith(string expectedStartString, string actualString)
         {
-            if (actualString.StartsWith(expectedStartString) == false)
+            if (actualString.StartsWith(expectedStartString) == false) { 
                 throw new StartsWithException(expectedStartString, actualString);
+            }
         }
 
         /// <summary>
@@ -106,8 +108,7 @@ namespace Should.Core.Assertions
         /// <param name="expected">The object that is expected not to be in the collection</param>
         /// <param name="collection">The collection to be inspected</param>
         /// <exception cref="DoesNotContainException">Thrown when the object is present inside the container</exception>
-        public static void DoesNotContain<T>(T expected,
-                                             IEnumerable<T> collection)
+        public static void DoesNotContain<T>(T expected, IEnumerable<T> collection)
         {
             DoesNotContain(expected, collection, GetEqualityComparer<T>());
         }
@@ -122,9 +123,10 @@ namespace Should.Core.Assertions
         /// <exception cref="DoesNotContainException">Thrown when the object is present inside the container</exception>
         public static void DoesNotContain<T>(T expected, IEnumerable<T> collection, IEqualityComparer<T> comparer)
         {
-            foreach (T item in collection)
-                if (comparer.Equals(expected, item))
-                    throw new DoesNotContainException(expected);
+            if (collection.Any(item => comparer.Equals(expected, item)))
+            {
+                throw new DoesNotContainException(expected);
+            }
         }
 
         /// <summary>
@@ -150,8 +152,9 @@ namespace Should.Core.Assertions
                                           string actualString,
                                           StringComparison comparisonType)
         {
-            if (actualString.IndexOf(expectedSubString, comparisonType) >= 0)
+            if (actualString.IndexOf(expectedSubString, comparisonType) >= 0) { 
                 throw new DoesNotContainException(expectedSubString);
+            }
         }
 
         ///// <summary>
@@ -174,7 +177,10 @@ namespace Should.Core.Assertions
         /// <exception cref="EmptyException">Thrown when the collection is not empty</exception>
         public static void Empty(IEnumerable collection)
         {
-            if (collection == null) throw new ArgumentNullException("collection", "cannot be null");
+            if (collection == null)
+            {
+                throw new ArgumentNullException("collection", "cannot be null");
+            }
 
 #pragma warning disable 168
             foreach (object @object in collection)
@@ -809,11 +815,15 @@ namespace Should.Core.Assertions
         /// <param name="testCode">A delegate to the code to be tested</param>
         /// <returns>The exception that was thrown, when successful</returns>
         /// <exception cref="ThrowsException">Thrown when an exception was not thrown, or when an exception of the incorrect type is thrown</exception>
-        public static T Throws<T>(ThrowsDelegate testCode)
-            where T : Exception
+        public static T Throws<T>(ThrowsDelegate testCode) where T : Exception
         {
             return (T)Throws(typeof(T), testCode);
         }
+
+        //public static T Throws<T>(Action action) where T : Exception
+        //{
+        //    return (T)Throws(typeof(T), action);
+        //}
 
         /// <summary>
         /// Verifies that the exact exception is thrown (and not a derived exception type).
@@ -823,9 +833,7 @@ namespace Should.Core.Assertions
         /// <param name="testCode">A delegate to the code to be tested</param>
         /// <returns>The exception that was thrown, when successful</returns>
         /// <exception cref="ThrowsException">Thrown when an exception was not thrown, or when an exception of the incorrect type is thrown</exception>
-        public static T Throws<T>(string userMessage,
-                                  ThrowsDelegate testCode)
-            where T : Exception
+        public static T Throws<T>(string userMessage, ThrowsDelegate testCode) where T : Exception
         {
             return (T)Throws(typeof(T), testCode);
         }
@@ -880,6 +888,20 @@ namespace Should.Core.Assertions
 
             return exception;
         }
+
+        //public static Exception Throws(Type exceptionType,
+        //                               Action action)
+        //{
+        //    var exception = Record.ExceptionRecorder.Record(action);
+
+        //    if (exception == null)
+        //        throw new ThrowsException(exceptionType);
+
+        //    if (!exceptionType.Equals(exception.GetType()))
+        //        throw new ThrowsException(exceptionType, exception);
+
+        //    return exception;
+        //}
 
         /// <summary>
         /// Verifies that the exact exception is thrown (and not a derived exception type).

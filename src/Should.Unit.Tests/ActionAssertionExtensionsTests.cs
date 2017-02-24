@@ -8,9 +8,16 @@ namespace Should.Unit.Tests
 	{
 		[Test]
 		[Ignore]
-		public void Throws(){
-			
-		}
+		public void ShouldThrows()
+        {
+			Action action = () => {
+				throw new TestException ();
+			};
+
+            action.ShouldThrow<TestException>();
+        }
 	}
+
+    public class TestException : Exception { }
 }
 

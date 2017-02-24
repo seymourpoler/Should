@@ -20,5 +20,10 @@ namespace Should
         {
             Assert.Throws<T>(@delegate);
         }
+
+        //public static void ShouldThrow<T>(this Action action) where T : Exception
+        //{
+        //    Assert.Throws<T>(action);
+        //}
     }
 }

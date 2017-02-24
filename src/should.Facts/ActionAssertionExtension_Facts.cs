@@ -5,7 +5,7 @@ namespace Should.Facts
 {
     public class ActionAssertionExtensionFacts
     {
-        private static object ThrowMethod()
+        private static void ThrowMethod()
         {
             throw new ArgumentException();
         }
