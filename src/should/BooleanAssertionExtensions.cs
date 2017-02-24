@@ -5,29 +5,8 @@ namespace Should
     /// <summary>
     /// Extensions which provide assertions to classes derived from <see cref="Boolean"/>.
     /// </summary>
-    public static class BooleanAssertionExtensions
+	public static partial class BooleanAssertionExtensions
     {
-        /// <summary>
-        /// Verifies that the condition is false.
-        /// </summary>
-        /// <param name="condition">The condition to be tested</param>
-        /// <exception cref="FalseException">Thrown if the condition is not false</exception>
-        public static void ShouldBeFalse(this bool condition)
-        {
-            Assert.False(condition);
-        }
-
-        /// <summary>
-        /// Verifies that the condition is false.
-        /// </summary>
-        /// <param name="condition">The condition to be tested</param>
-        /// <param name="userMessage">The message to show when the condition is not false</param>
-        /// <exception cref="FalseException">Thrown if the condition is not false</exception>
-        public static void ShouldBeFalse(this bool condition,
-                                         string userMessage)
-        {
-            Assert.False(condition, userMessage);
-        }
 
         /// <summary>
         /// Verifies that an expression is true.

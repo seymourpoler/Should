@@ -52,6 +52,7 @@
     <Compile Include="StringAssertionExtensions\ShouldNotContain.cs" />
     <Compile Include="StringAssertionExtensions\ShouldContain.cs" />
     <Compile Include="StringAssertionExtensions\ShouldNotStartWith.cs" />
+    <Compile Include="BooleanAssertionExtensions\ShouldBeTrue.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Should.Core\Should.Core.csproj">
@@ -69,5 +70,6 @@
   -->
   <ItemGroup>
     <Folder Include="StringAssertionExtensions\" />
+    <Folder Include="BooleanAssertionExtensions\" />
   </ItemGroup>
 </Project>
