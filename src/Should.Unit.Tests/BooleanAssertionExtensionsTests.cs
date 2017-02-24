@@ -17,6 +17,21 @@ namespace Should.Unit.Tests
 		{
 			true.ShouldBeFalse ();
 		}
-	}
+
+        [Test]
+        public void ThrowsFalseExceptionWithMessage()
+        {
+            var message = "message";
+            try
+            {
+                true.ShouldBeFalse(message);
+                Assert.Fail("swhould be false with message");
+            }
+            catch (FalseException ex)
+            {
+                ex.Message.ShouldEqual(message);
+            }
+        }
+    }
 }
 
