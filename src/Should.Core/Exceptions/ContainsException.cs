@@ -1,3 +1,5 @@
+using System;
+
 namespace Should.Core.Exceptions
 {
     /// <summary>
@@ -10,6 +12,6 @@ namespace Should.Core.Exceptions
         /// </summary>
         /// <param name="expected">The expected object value</param>
         public ContainsException(object expected)
-            : base(string.Format("Assert.Contains() failure: Not found: {0}", expected)) { }
+            : base(String.Format("Assert.Contains() failure: Not found: {0}", expected)) { }
     }
 }

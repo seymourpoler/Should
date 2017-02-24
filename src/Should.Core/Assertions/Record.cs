@@ -43,5 +43,21 @@ namespace Should.Core.Assertions
                 return ex;
             }
         }
+
+        public class ExceptionRecorder
+        {
+            public static Exception Record(Action action)
+            {
+                try
+                {
+                    action();
+                    return null;
+                }
+                catch (Exception ex)
+                {
+                    return ex;
+                }
+            }
+        }
     }
 }

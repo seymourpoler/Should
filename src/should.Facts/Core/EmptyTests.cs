@@ -41,7 +41,7 @@ namespace Should.Facts.Core
             [Fact]
             public void IsEmpty()
             {
-                Assert.Empty("");
+                Assert.Empty(String.Empty);
             }
 
             [Fact]
