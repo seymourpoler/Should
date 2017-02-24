@@ -43,7 +43,8 @@
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="ActionAssertionExtensions.cs" />
-    <Compile Include="BooleanAssertionExtensions.cs" />
+    <Compile Include="BooleanAssertionExtensions\ShouldBeFalse.cs" />
+    <Compile Include="BooleanAssertionExtensions\ShouldBeTrue.cs" />
     <Compile Include="CollectionAssertionExtensions.cs" />
     <Compile Include="DateAssertionExtensions.cs" />
     <Compile Include="DoubleAssertionExtensions.cs" />
@@ -67,7 +68,5 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-  <ItemGroup>
-    <Folder Include="StringAssertionExtensions\" />
-  </ItemGroup>
+  <ItemGroup />
 </Project>
