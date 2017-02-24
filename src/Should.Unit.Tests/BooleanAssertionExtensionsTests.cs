@@ -22,7 +22,12 @@ namespace Should.Unit.Tests
 		public void ThrowsFalseExceptionWithMessage()
 		{
 			var message = "simple message";
-			true.ShouldBeFalse (message);
+			try{
+				true.ShouldBeFalse (message);
+				Assert.Fail();
+			}catch(FalseException ex){
+				ex.Message.ShouldEqual(message);
+			}
 		}
 
 		[Test]
