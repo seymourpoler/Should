@@ -18,7 +18,6 @@ namespace Should.Unit.Tests
 			true.ShouldBeFalse ();
 		}
 
-
 		[Test]
 		public void ThrowsFalseExceptionWithMessage()
 		{
