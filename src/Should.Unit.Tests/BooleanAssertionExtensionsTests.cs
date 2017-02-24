@@ -58,7 +58,4 @@ namespace Should.Unit.Tests
 			}
 		}
 	}
-		
-
-	    
 }
