@@ -10,7 +10,7 @@ namespace Should.Core.Assertions
     /// Contains various static methods that are used to verify that conditions are met during the
     /// process of running tests.
     /// </summary>
-    public class Assert
+    public partial class Assert
     {
         /// <summary>
         /// Used by the Throws and DoesNotThrow methods.
@@ -821,16 +821,6 @@ namespace Should.Core.Assertions
         }
 
 
-		public static T Throws<T>(Action action) where T : Exception
-		{
-			return (T)Throws(typeof(T), action);
-		}
-
-        //public static T Throws<T>(Action action) where T : Exception
-        //{
-        //    return (T)Throws(typeof(T), action);
-        //}
-
         /// <summary>
         /// Verifies that the exact exception is thrown (and not a derived exception type).
         /// </summary>
@@ -893,24 +883,6 @@ namespace Should.Core.Assertions
 
             return exception;
         }
-
-		public static Exception Throws(Type exceptionType, Action action){
-			if(exceptionType == null){
-				throw new ArgumentNullException ();
-			}
-			if(action == null){
-				throw new ArgumentNullException ();
-			}
-
-			var exception = ExceptionRecorder.Record (action);
-			if (exception == null)
-				throw new ThrowsException(exceptionType);
-
-			if (!exceptionType.Equals(exception.GetType()))
-				throw new ThrowsException(exceptionType, exception);
-
-			return exception;
-		}
 
         /// <summary>
         /// Verifies that the exact exception is thrown (and not a derived exception type).
