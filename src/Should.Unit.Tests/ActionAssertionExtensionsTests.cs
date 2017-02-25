@@ -1,5 +1,6 @@
 ﻿using System;
 using NUnit.Framework;
+using Should.Core.Exceptions;
 
 namespace Should.Unit.Tests
 {
@@ -15,6 +16,15 @@ namespace Should.Unit.Tests
 
             action.ShouldThrow<TestException>();
         }
+
+		[Test]
+		[ExpectedException(typeof(ThrowsException))]
+		public void ThrowsExceptionWhenShouldThrowsFails()
+		{
+			Action action = () => {};
+
+			action.ShouldThrow<TestException>();
+		}
 	}
 
     public class TestException : Exception { }
