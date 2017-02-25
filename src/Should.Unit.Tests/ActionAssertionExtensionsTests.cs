@@ -7,7 +7,6 @@ namespace Should.Unit.Tests
 	public class ActionAssertionExtensionsTests
 	{
 		[Test]
-		[Ignore]
 		public void ShouldThrows()
         {
 			Action action = () => {

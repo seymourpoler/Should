@@ -48,7 +48,6 @@
     <Compile Include="Assertions\AssertEqualityComparer.cs" />
     <Compile Include="Assertions\Assertions.cs" />
     <Compile Include="Assertions\EnumerableEqualityComparer.cs" />
-    <Compile Include="Assertions\Record.cs" />
     <Compile Include="DatePrecision.cs" />
     <Compile Include="Exceptions\AssertActualExpectedException.cs" />
     <Compile Include="Exceptions\AssertException.cs" />
@@ -81,6 +80,7 @@
     <Compile Include="Exceptions\TimeoutException.cs" />
     <Compile Include="Exceptions\TraceAssertException.cs" />
     <Compile Include="Exceptions\TrueException.cs" />
+    <Compile Include="Assertions\ExceptionRecorder.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

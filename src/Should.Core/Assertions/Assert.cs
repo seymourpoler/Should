@@ -820,6 +820,12 @@ namespace Should.Core.Assertions
             return (T)Throws(typeof(T), testCode);
         }
 
+
+		public static T Throws<T>(Action action) where T : Exception
+		{
+			return (T)Throws(typeof(T), action);
+		}
+
         //public static T Throws<T>(Action action) where T : Exception
         //{
         //    return (T)Throws(typeof(T), action);
@@ -846,8 +852,7 @@ namespace Should.Core.Assertions
         /// <param name="testCode">A delegate to the code to be tested</param>
         /// <returns>The exception that was thrown, when successful</returns>
         /// <exception cref="ThrowsException">Thrown when an exception was not thrown, or when an exception of the incorrect type is thrown</exception>
-        public static T Throws<T>(ThrowsDelegateWithReturn testCode)
-            where T : Exception
+        public static T Throws<T>(ThrowsDelegateWithReturn testCode) where T : Exception
         {
             return (T)Throws(typeof(T), testCode);
         }
@@ -878,7 +883,7 @@ namespace Should.Core.Assertions
         public static Exception Throws(Type exceptionType,
                                        ThrowsDelegate testCode)
         {
-            Exception exception = Record.Exception(testCode);
+            Exception exception = ExceptionRecorder.Record(testCode);
 
             if (exception == null)
                 throw new ThrowsException(exceptionType);
@@ -889,19 +894,23 @@ namespace Should.Core.Assertions
             return exception;
         }
 
-        //public static Exception Throws(Type exceptionType,
-        //                               Action action)
-        //{
-        //    var exception = Record.ExceptionRecorder.Record(action);
+		public static Exception Throws(Type exceptionType, Action action){
+			if(exceptionType == null){
+				throw new ArgumentNullException ();
+			}
+			if(action == null){
+				throw new ArgumentNullException ();
+			}
 
-        //    if (exception == null)
-        //        throw new ThrowsException(exceptionType);
+			var exception = ExceptionRecorder.Record (action);
+			if (exception == null)
+				throw new ThrowsException(exceptionType);
 
-        //    if (!exceptionType.Equals(exception.GetType()))
-        //        throw new ThrowsException(exceptionType, exception);
+			if (!exceptionType.Equals(exception.GetType()))
+				throw new ThrowsException(exceptionType, exception);
 
-        //    return exception;
-        //}
+			return exception;
+		}
 
         /// <summary>
         /// Verifies that the exact exception is thrown (and not a derived exception type).
@@ -914,7 +923,7 @@ namespace Should.Core.Assertions
         public static Exception Throws(Type exceptionType,
                                        ThrowsDelegateWithReturn testCode)
         {
-            Exception exception = Record.Exception(testCode);
+            Exception exception = ExceptionRecorder.Record(testCode);
 
             if (exception == null)
                 throw new ThrowsException(exceptionType);
@@ -931,7 +940,7 @@ namespace Should.Core.Assertions
         /// <param name="testCode">A delegate to the code to be tested</param>
         public static void DoesNotThrow(ThrowsDelegate testCode)
         {
-            Exception ex = Record.Exception(testCode);
+            Exception ex = ExceptionRecorder.Record(testCode);
 
             if (ex != null)
                 throw new DoesNotThrowException(ex);
