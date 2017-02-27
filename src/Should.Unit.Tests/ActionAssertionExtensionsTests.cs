@@ -29,8 +29,7 @@ namespace Should.Unit.Tests
 		[Test]
 		public void ShouldNotThrows()
 		{
-			Action action = () => {
-			};
+			Action action = () => {};
 
 			action.ShouldNotThrows<TestException>();
 		}
