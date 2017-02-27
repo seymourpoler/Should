@@ -106,15 +106,6 @@ namespace Should.Core.Assertions
             Assert.DoesNotContain(expectedSubString, actualString, comparisonType);
         }
 
-        ///// <summary>
-        ///// Verifies that a block of code does not throw any exceptions.
-        ///// </summary>
-        ///// <param name="testCode">A delegate to the code to be tested</param>
-        //public void DoesNotThrow(Assert.ThrowsDelegate testCode)
-        //{
-        //    Assert.DoesNotThrow(testCode);
-        //}
-
         /// <summary>
         /// Verifies that a collection is empty.
         /// </summary>

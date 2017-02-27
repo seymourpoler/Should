@@ -857,8 +857,7 @@ namespace Should.Core.Assertions
         /// <returns>The exception that was thrown, when successful</returns>
         /// <exception cref="ThrowsException">Thrown when an exception was not thrown, or when an exception of the incorrect type is thrown</exception>
         public static T Throws<T>(string userMessage,
-                                  ThrowsDelegateWithReturn testCode)
-            where T : Exception
+                                  ThrowsDelegateWithReturn testCode) where T : Exception
         {
             return (T)Throws(typeof(T), testCode);
         }
