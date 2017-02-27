@@ -25,6 +25,26 @@ namespace Should.Unit.Tests
 
 			action.ShouldThrow<TestException>();
 		}
+
+		[Test]
+		public void ShouldNotThrows()
+		{
+			Action action = () => {
+			};
+
+			action.ShouldNotThrows<TestException>();
+		}
+
+		[Test]
+		[ExpectedException(typeof(DoesNotThrowException))]
+		public void ThrowsExceptionWhenShouldNotThrowsExcpetion()
+		{
+			Action action = () => {
+				throw new TestException();
+			};
+
+			action.ShouldNotThrows<TestException>();
+		}
 	}
 
     public class TestException : Exception { }
