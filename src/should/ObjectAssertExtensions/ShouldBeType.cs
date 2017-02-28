@@ -2,7 +2,7 @@
 
 namespace Should
 {
-    public static partial class ShouldBeType
+    public static partial class ObjectAssertExtensions
     {
         /// <summary>
         /// Verifies that an object is exactly the given type (and not a derived type).
