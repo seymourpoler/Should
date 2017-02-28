@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using Should.Core.Assertions;
-using Should.Core.Exceptions;
 
 namespace Should
 {
