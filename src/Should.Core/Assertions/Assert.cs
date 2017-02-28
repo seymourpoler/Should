@@ -445,9 +445,7 @@ namespace Should.Core.Assertions
         /// <param name="low">The (inclusive) low value of the range</param>
         /// <param name="high">The (inclusive) high value of the range</param>
         /// <exception cref="InRangeException">Thrown when the value is not in the given range</exception>
-        public static void InRange<T>(T actual,
-                                      T low,
-                                      T high)
+        public static void InRange<T>(T actual, T low, T high)
         {
             InRange(actual, low, high, GetComparer<T>());
         }
