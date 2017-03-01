@@ -7,7 +7,7 @@ namespace Should
     /// <summary>
     /// Extensions which provide assertions to classes derived from <see cref="object"/>.
     /// </summary>
-    public static class ObjectAssertExtensions
+    public static partial class ObjectAssertExtensions
     {
         /// <summary>Verifies that an object is greater than the exclusive minimum value.</summary>
         /// <typeparam name="T">The type of the objects to be compared.</typeparam>
