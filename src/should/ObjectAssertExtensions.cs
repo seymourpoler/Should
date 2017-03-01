@@ -69,10 +69,7 @@ namespace Should
         /// <param name="high">The (inclusive) high value of the range</param>
         /// <param name="comparer">The comparer used to evaluate the value's range</param>
         /// <exception cref="InRangeException">Thrown when the value is not in the given range</exception>
-        public static void ShouldBeInRange<T>(this T actual,
-                                              T low,
-                                              T high,
-                                              IComparer<T> comparer)
+        public static void ShouldBeInRange<T>(this T actual, T low, T high, IComparer<T> comparer)
         {
             Assert.InRange(actual, low, high, comparer);
         }
