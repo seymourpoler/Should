@@ -25,5 +25,11 @@ namespace Should.Unit.Tests
             "Hello everyone".ShouldNotBeType<int>();
         }
 
+        [Test]
+        [ExpectedException(typeof(IsNotTypeException))]
+        public void ThrowsIsNotTypeExceptionWhenShouldNotBeType()
+        {
+            "Hello everyone".ShouldNotBeType<string>();
+        }
     }
 }
