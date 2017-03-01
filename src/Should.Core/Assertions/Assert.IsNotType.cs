@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using Should.Core.Exceptions;
 
 namespace Should.Core.Assertions
@@ -23,7 +22,7 @@ namespace Should.Core.Assertions
         /// <param name="expectedType">The type the object should not be</param>
         /// <param name="object">The object to be evaluated</param>
         /// <exception cref="IsNotTypeException">Thrown when the object is the given type</exception>
-        public static void IsNotType(Type expectedType,
+		public static void IsNotType(Type expectedType,
                                      object @object)
         {
             if (expectedType.Equals(@object.GetType()))

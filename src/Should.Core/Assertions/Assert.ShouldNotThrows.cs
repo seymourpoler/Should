@@ -11,7 +11,7 @@ namespace Should.Core.Assertions
 			NotThrows(typeof(T), action);
 		}
 
-		public static void NotThrows(Type exceptionType, Action action){
+		private static void NotThrows(Type exceptionType, Action action){
 			if(exceptionType == null){
 				throw new ArgumentNullException ();
 			}

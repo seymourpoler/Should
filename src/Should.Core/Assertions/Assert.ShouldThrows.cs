@@ -10,7 +10,7 @@ namespace Should.Core.Assertions
 			return (T)Throws(typeof(T), action);
 		}
 
-		public static Exception Throws(Type exceptionType, Action action){
+		private static Exception Throws(Type exceptionType, Action action){
 			if(exceptionType == null){
 				throw new ArgumentNullException ();
 			}

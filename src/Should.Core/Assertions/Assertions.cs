@@ -271,9 +271,9 @@ namespace Should.Core.Assertions
         /// <param name="object">The object to be evaluated</param>
         /// <returns>The object, casted to type T when successful</returns>
         /// <exception cref="IsTypeException">Thrown when the object is not the given type</exception>
-        public T IsType<T>(object @object)
+        public void IsType<T>(object @object)
         {
-            return Assert.IsType<T>(@object);
+            Assert.IsType<T>(@object);
         }
 
         /// <summary>

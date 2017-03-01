@@ -83,6 +83,8 @@
     <Compile Include="Assertions\ExceptionRecorder.cs" />
     <Compile Include="Assertions\Assert.ShouldThrows.cs" />
     <Compile Include="Assertions\Assert.ShouldNotThrows.cs" />
+    <Compile Include="Assertions\Assert.IsType.cs" />
+    <Compile Include="Assertions\Assert.IsNotType.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
