@@ -49,6 +49,8 @@
     <Compile Include="DateAssertionExtensions.cs" />
     <Compile Include="DoubleAssertionExtensions.cs" />
     <Compile Include="ObjectAssertExtensions.cs" />
+    <Compile Include="ObjectAssertExtensions\ShouldBeType.cs" />
+    <Compile Include="ObjectAssertExtensions\ShouldNotBeType.cs" />
     <Compile Include="StringAssertionExtensions\ShouldStartWith.cs" />
     <Compile Include="StringAssertionExtensions\ShouldNotContain.cs" />
     <Compile Include="StringAssertionExtensions\ShouldContain.cs" />
@@ -68,9 +70,6 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-  <ItemGroup>
-    <Folder Include="StringAssertionExtensions\" />
-    <Folder Include="BooleanAssertionExtensions\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup />
 </Project>

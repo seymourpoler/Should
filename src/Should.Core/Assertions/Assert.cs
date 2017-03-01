@@ -445,9 +445,7 @@ namespace Should.Core.Assertions
         /// <param name="low">The (inclusive) low value of the range</param>
         /// <param name="high">The (inclusive) high value of the range</param>
         /// <exception cref="InRangeException">Thrown when the value is not in the given range</exception>
-        public static void InRange<T>(T actual,
-                                      T low,
-                                      T high)
+        public static void InRange<T>(T actual, T low, T high)
         {
             InRange(actual, low, high, GetComparer<T>());
         }
@@ -522,30 +520,6 @@ namespace Should.Core.Assertions
                 throw new IsAssignableFromException(expectedType, @object, userMessage);
         }
 
-        /// <summary>        
-        /// Verifies that an object is not exactly the given type.
-        /// </summary>
-        /// <typeparam name="T">The type the object should not be</typeparam>
-        /// <param name="object">The object to be evaluated</param>
-        /// <exception cref="IsNotTypeException">Thrown when the object is the given type</exception>
-        public static void IsNotType<T>(object @object)
-        {
-            IsNotType(typeof(T), @object);
-        }
-
-        /// <summary>
-        /// Verifies that an object is not exactly the given type.
-        /// </summary>
-        /// <param name="expectedType">The type the object should not be</param>
-        /// <param name="object">The object to be evaluated</param>
-        /// <exception cref="IsNotTypeException">Thrown when the object is the given type</exception>
-        public static void IsNotType(Type expectedType,
-                                     object @object)
-        {
-            if (expectedType.Equals(@object.GetType()))
-                throw new IsNotTypeException(expectedType, @object);
-        }
-
         /// <summary>
         /// Verifies that an object is exactly the given type (and not a derived type).
         /// </summary>
@@ -565,8 +539,7 @@ namespace Should.Core.Assertions
         /// <param name="expectedType">The type the object should be</param>
         /// <param name="object">The object to be evaluated</param>
         /// <exception cref="IsTypeException">Thrown when the object is not the given type</exception>
-        public static void IsType(Type expectedType,
-                                  object @object)
+        public static void IsType(Type expectedType, object @object)
         {
             if (@object == null || !expectedType.Equals(@object.GetType()))
                 throw new IsTypeException(expectedType, @object);

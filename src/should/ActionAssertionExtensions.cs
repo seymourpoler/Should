@@ -26,9 +26,9 @@ namespace Should
             Assert.Throws<T>(action);
         }
 
-		public static void ShouldNotThrows<T>(this Action action) where T : Exception
-		{
-			Assert.NotThrows<T>(action);
-		}
-	}
+        public static void ShouldNotThrows<T>(this Action action) where T : Exception
+        {
+            //Assert.NotThrows<T>(action);
+        }
+    }
 }

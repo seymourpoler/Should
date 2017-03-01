@@ -1,14 +1,13 @@
 using System;
 using System.Collections.Generic;
 using Should.Core.Assertions;
-using Should.Core.Exceptions;
 
 namespace Should
 {
     /// <summary>
     /// Extensions which provide assertions to classes derived from <see cref="object"/>.
     /// </summary>
-    public static class ObjectAssertExtensions
+    public static partial class ObjectAssertExtensions
     {
         /// <summary>Verifies that an object is greater than the exclusive minimum value.</summary>
         /// <typeparam name="T">The type of the objects to be compared.</typeparam>
@@ -56,9 +55,7 @@ namespace Should
         /// <param name="low">The (inclusive) low value of the range</param>
         /// <param name="high">The (inclusive) high value of the range</param>
         /// <exception cref="InRangeException">Thrown when the value is not in the given range</exception>
-        public static void ShouldBeInRange<T>(this T actual,
-                                              T low,
-                                              T high)
+        public static void ShouldBeInRange<T>(this T actual, T low, T high)
         {
             Assert.InRange(actual, low, high);
         }
@@ -72,10 +69,7 @@ namespace Should
         /// <param name="high">The (inclusive) high value of the range</param>
         /// <param name="comparer">The comparer used to evaluate the value's range</param>
         /// <exception cref="InRangeException">Thrown when the value is not in the given range</exception>
-        public static void ShouldBeInRange<T>(this T actual,
-                                              T low,
-                                              T high,
-                                              IComparer<T> comparer)
+        public static void ShouldBeInRange<T>(this T actual, T low, T high, IComparer<T> comparer)
         {
             Assert.InRange(actual, low, high, comparer);
         }
@@ -138,18 +132,6 @@ namespace Should
                                           object expected)
         {
             Assert.Same(expected, actual);
-        }
-
-        /// <summary>
-        /// Verifies that an object is exactly the given type (and not a derived type).
-        /// </summary>
-        /// <typeparam name="T">The type the object should be</typeparam>
-        /// <param name="object">The object to be evaluated</param>
-        /// <returns>The object, casted to type T when successful</returns>
-        /// <exception cref="IsTypeException">Thrown when the object is not the given type</exception>
-        public static T ShouldBeType<T>(this object @object)
-        {
-            return Assert.IsType<T>(@object);
         }
 
         /// <summary>
@@ -222,8 +204,7 @@ namespace Should
         /// <param name="actual">The value to be compared against</param>
         /// <param name="expected">The expected value</param>
         /// <exception cref="EqualException">Thrown when the objects are not equal</exception>
-        public static void ShouldEqual<T>(this T actual,
-                                          T expected)
+        public static void ShouldEqual<T>(this T actual, T expected)
         {
             Assert.Equal(expected, actual);
         }
@@ -236,9 +217,7 @@ namespace Should
         /// <param name="expected">The expected value</param>
         /// <param name="message">The user message to show on failure</param>
         /// <exception cref="EqualException">Thrown when the objects are not equal</exception>
-        public static void ShouldEqual<T>(this T actual,
-                                          T expected,
-                                          string userMessage)
+        public static void ShouldEqual<T>(this T actual, T expected, string userMessage)
         {
             Assert.Equal(expected, actual, userMessage);
         }
@@ -251,9 +230,7 @@ namespace Should
         /// <param name="expected">The expected value</param>
         /// <param name="comparer">The comparer used to compare the two objects</param>
         /// <exception cref="EqualException">Thrown when the objects are not equal</exception>
-        public static void ShouldEqual<T>(this T actual,
-                                          T expected,
-                                          IEqualityComparer<T> comparer)
+        public static void ShouldEqual<T>(this T actual, T expected, IEqualityComparer<T> comparer)
         {
             Assert.Equal(expected, actual, comparer);
         }
@@ -266,9 +243,7 @@ namespace Should
         /// <param name="low">The (inclusive) low value of the range</param>
         /// <param name="high">The (inclusive) high value of the range</param>
         /// <exception cref="NotInRangeException">Thrown when the value is in the given range</exception>
-        public static void ShouldNotBeInRange<T>(this T actual,
-                                                 T low,
-                                                 T high)
+        public static void ShouldNotBeInRange<T>(this T actual, T low, T high)
         {
             Assert.NotInRange(actual, low, high);
         }
@@ -282,10 +257,7 @@ namespace Should
         /// <param name="high">The (inclusive) high value of the range</param>
         /// <param name="comparer">The comparer used to evaluate the value's range</param>
         /// <exception cref="NotInRangeException">Thrown when the value is in the given range</exception>
-        public static void ShouldNotBeInRange<T>(this T actual,
-                                                 T low,
-                                                 T high,
-                                                 IComparer<T> comparer)
+        public static void ShouldNotBeInRange<T>(this T actual, T low, T high, IComparer<T> comparer)
         {
             Assert.NotInRange(actual, low, high, comparer);
         }
@@ -329,22 +301,10 @@ namespace Should
         /// <summary>
         /// Verifies that an object is not exactly the given type.
         /// </summary>
-        /// <typeparam name="T">The type the object should not be</typeparam>
-        /// <param name="object">The object to be evaluated</param>
-        /// <exception cref="IsTypeException">Thrown when the object is the given type</exception>
-        public static void ShouldNotBeType<T>(this object @object)
-        {
-            Assert.IsNotType<T>(@object);
-        }
-
-        /// <summary>
-        /// Verifies that an object is not exactly the given type.
-        /// </summary>
         /// <param name="object">The object to be evaluated</param>
         /// <param name="expectedType">The type the object should not be</param>
         /// <exception cref="IsTypeException">Thrown when the object is the given type</exception>
-        public static void ShouldNotBeType(this object @object,
-                                           Type expectedType)
+        public static void ShouldNotBeType(this object @object, Type expectedType)
         {
             Assert.IsNotType(expectedType, @object);
         }
