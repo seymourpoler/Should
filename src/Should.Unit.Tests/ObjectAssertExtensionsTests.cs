@@ -18,5 +18,12 @@ namespace Should.Unit.Tests
         {
             "Hello everyone".ShouldBeType<int>();
         }
+
+        [Test]
+        public void ShouldNotBeTypeOf()
+        {
+            "Hello everyone".ShouldNotBeType<int>();
+        }
+
     }
 }
