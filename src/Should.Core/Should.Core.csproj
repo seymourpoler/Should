@@ -44,6 +44,8 @@
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="Assertions\Assert.cs" />
+    <Compile Include="Assertions\Assert.IsNotType.cs" />
+    <Compile Include="Assertions\Assert.IsType.cs" />
     <Compile Include="Assertions\AssertComparer.cs" />
     <Compile Include="Assertions\AssertEqualityComparer.cs" />
     <Compile Include="Assertions\Assertions.cs" />
@@ -83,8 +85,6 @@
     <Compile Include="Assertions\ExceptionRecorder.cs" />
     <Compile Include="Assertions\Assert.ShouldThrows.cs" />
     <Compile Include="Assertions\Assert.ShouldNotThrows.cs" />
-    <Compile Include="Assertions\Assert.IsType.cs" />
-    <Compile Include="Assertions\Assert.IsNotType.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
