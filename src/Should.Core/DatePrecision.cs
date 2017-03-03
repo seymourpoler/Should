@@ -13,7 +13,7 @@ namespace Should.Core
 
         public abstract DateTime Truncate(DateTime date);
 
-        public class SecondPrecision : DatePrecision
+        private class SecondPrecision : DatePrecision
         {
             public override DateTime Truncate(DateTime date)
             {
@@ -21,7 +21,7 @@ namespace Should.Core
             }
         }
 
-        public class MinutePrecision : DatePrecision
+        private class MinutePrecision : DatePrecision
         {
             public override DateTime Truncate(DateTime date)
             {
@@ -29,7 +29,7 @@ namespace Should.Core
             }
         }
 
-        public class HourPrecision : DatePrecision
+        private class HourPrecision : DatePrecision
         {
             public override DateTime Truncate(DateTime date)
             {
@@ -37,7 +37,7 @@ namespace Should.Core
             }
         }
 
-        public class DayPrecision : DatePrecision
+        private class DayPrecision : DatePrecision
         {
             public override DateTime Truncate(DateTime date)
             {
@@ -45,7 +45,7 @@ namespace Should.Core
             }
         }
 
-        public class MonthPrecision : DatePrecision
+        private class MonthPrecision : DatePrecision
         {
             public override DateTime Truncate(DateTime date)
             {
@@ -53,7 +53,7 @@ namespace Should.Core
             }
         }
 
-        public class YearPrecision : DatePrecision
+        private class YearPrecision : DatePrecision
         {
             public override DateTime Truncate(DateTime date)
             {
