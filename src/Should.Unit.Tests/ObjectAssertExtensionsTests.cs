@@ -31,5 +31,11 @@ namespace Should.Unit.Tests
         {
             "Hello everyone".ShouldNotBeType<string>();
         }
+
+        [Test]
+        public void ShouldBeNull()
+        {
+            null.ShouldBeNull();
+        }
     }
 }

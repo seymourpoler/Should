@@ -49,6 +49,7 @@
     <Compile Include="DateAssertionExtensions.cs" />
     <Compile Include="DoubleAssertionExtensions.cs" />
     <Compile Include="ObjectAssertExtensions.cs" />
+    <Compile Include="ObjectAssertExtensions\ShouldBeNull.cs" />
     <Compile Include="ObjectAssertExtensions\ShouldBeType.cs" />
     <Compile Include="ObjectAssertExtensions\ShouldNotBeType.cs" />
     <Compile Include="StringAssertionExtensions\ShouldStartWith.cs" />
