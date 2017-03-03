@@ -179,7 +179,7 @@ namespace Should.Core.Assertions
         {
             if (collection == null)
             {
-                throw new ArgumentNullException("collection", "cannot be null");
+                throw new ArgumentNullException(nameof(collection), "cannot be null");
             }
 
 #pragma warning disable 168
@@ -195,8 +195,7 @@ namespace Should.Core.Assertions
         /// <param name="expected">The expected value</param>
         /// <param name="actual">The value to be compared against</param>
         /// <exception cref="EqualException">Thrown when the objects are not equal</exception>
-        public static void Equal<T>(T expected,
-                                    T actual)
+        public static void Equal<T>(T expected, T actual)
         {
             Equal(expected, actual, GetEqualityComparer<T>());
         }
@@ -209,9 +208,7 @@ namespace Should.Core.Assertions
         /// <param name="actual">The value to be compared against</param>
         /// <param name="userMessage">The user message to be shown on failure</param>
         /// <exception cref="EqualException">Thrown when the objects are not equal</exception>
-        public static void Equal<T>(T expected,
-                                    T actual,
-                                    string userMessage)
+        public static void Equal<T>(T expected, T actual, string userMessage)
         {
             Equal(expected, actual, GetEqualityComparer<T>(), userMessage);
         }
@@ -224,9 +221,7 @@ namespace Should.Core.Assertions
         /// <param name="actual">The value to be compared against</param>
         /// <param name="comparer">The comparer used to compare the two objects</param>
         /// <exception cref="EqualException">Thrown when the objects are not equal</exception>
-        public static void Equal<T>(T expected,
-                                    T actual,
-                                    IEqualityComparer<T> comparer)
+        public static void Equal<T>(T expected, T actual, IEqualityComparer<T> comparer)
         {
             if (!comparer.Equals(expected, actual))
                 throw new EqualException(expected, actual);
@@ -241,10 +236,7 @@ namespace Should.Core.Assertions
         /// <param name="comparer">The comparer used to compare the two objects</param>
         /// <exception cref="EqualException">Thrown when the objects are not equal</exception>
 		/// <param name = "userMessage"></param>
-        public static void Equal<T>(T expected,
-                                    T actual,
-                                    IEqualityComparer<T> comparer,
-                                    string userMessage)
+        public static void Equal<T>(T expected, T actual, IEqualityComparer<T> comparer, string userMessage)
         {
             if (!comparer.Equals(expected, actual))
                 throw new EqualException(expected, actual, userMessage);
@@ -358,8 +350,7 @@ namespace Should.Core.Assertions
 
         /// <summary>Do not call this method.</summary>
         [Obsolete("This is an override of Object.Equals(). Call Assert.Equal() instead.", true)]
-        public new static bool Equals(object a,
-                                      object b)
+        public new static bool Equals(object a, object b)
         {
             throw new InvalidOperationException("Assert.Equals should not be used");
         }
@@ -380,8 +371,7 @@ namespace Should.Core.Assertions
         /// <param name="condition">The condition to be tested</param>
         /// <param name="userMessage">The message to show when the condition is not false</param>
         /// <exception cref="FalseException">Thrown if the condition is not false</exception>
-        public static void False(bool condition,
-                                 string userMessage)
+        public static void False(bool condition, string userMessage)
         {
             if (condition)
                 throw new FalseException(userMessage);
@@ -459,10 +449,7 @@ namespace Should.Core.Assertions
         /// <param name="high">The (inclusive) high value of the range</param>
         /// <param name="comparer">The comparer used to evaluate the value's range</param>
         /// <exception cref="InRangeException">Thrown when the value is not in the given range</exception>
-        public static void InRange<T>(T actual,
-                                      T low,
-                                      T high,
-                                      IComparer<T> comparer)
+        public static void InRange<T>(T actual, T low, T high, IComparer<T> comparer)
         {
             if (comparer.Compare(low, actual) > 0 || comparer.Compare(actual, high) > 0)
                 throw new InRangeException(actual, low, high);
@@ -519,30 +506,6 @@ namespace Should.Core.Assertions
             if (@object == null || !expectedType.IsAssignableFrom(@object.GetType()))
                 throw new IsAssignableFromException(expectedType, @object, userMessage);
         }
-
-        /// <summary>
-        /// Verifies that an object is exactly the given type (and not a derived type).
-        /// </summary>
-        /// <typeparam name="T">The type the object should be</typeparam>
-        /// <param name="object">The object to be evaluated</param>
-        /// <returns>The object, casted to type T when successful</returns>
-        /// <exception cref="IsTypeException">Thrown when the object is not the given type</exception>
-        /*public static T IsType<T>(object @object)
-        {
-            IsType(typeof(T), @object);
-            return (T)@object;
-        }*/
-        /// <summary>
-        /// Verifies that an object is exactly the given type (and not a derived type).
-        /// </summary>
-        /// <param name="expectedType">The type the object should be</param>
-        /// <param name="object">The object to be evaluated</param>
-        /// <exception cref="IsTypeException">Thrown when the object is not the given type</exception>
-        /*public static void IsType(Type expectedType, object @object)
-        {
-            if (@object == null || !expectedType.Equals(@object.GetType()))
-                throw new IsTypeException(expectedType, @object);
-        }*/
 
         /// <summary>Verifies that an object is less than the exclusive maximum value.</summary>
         /// <typeparam name="T">The type of the objects to be compared.</typeparam>
@@ -609,8 +572,7 @@ namespace Should.Core.Assertions
         /// <param name="expected">The expected object</param>
         /// <param name="actual">The actual object</param>
         /// <exception cref="NotEqualException">Thrown when the objects are equal</exception>
-        public static void NotEqual<T>(T expected,
-                                       T actual)
+        public static void NotEqual<T>(T expected, T actual)
         {
             NotEqual(expected, actual, GetEqualityComparer<T>());
         }
@@ -623,9 +585,7 @@ namespace Should.Core.Assertions
         /// <param name="actual">The actual object</param>
         /// <param name="comparer">The comparer used to examine the objects</param>
         /// <exception cref="NotEqualException">Thrown when the objects are equal</exception>
-        public static void NotEqual<T>(T expected,
-                                       T actual,
-                                       IEqualityComparer<T> comparer)
+        public static void NotEqual<T>(T expected, T actual, IEqualityComparer<T> comparer)
         {
             if (comparer.Equals(expected, actual))
                 throw new NotEqualException(expected, actual);
@@ -639,9 +599,7 @@ namespace Should.Core.Assertions
         /// <param name="low">The (inclusive) low value of the range</param>
         /// <param name="high">The (inclusive) high value of the range</param>
         /// <exception cref="NotInRangeException">Thrown when the value is in the given range</exception>
-        public static void NotInRange<T>(T actual,
-                                         T low,
-                                         T high)
+        public static void NotInRange<T>(T actual, T low, T high)
         {
             NotInRange(actual, low, high, GetComparer<T>());
         }
@@ -655,10 +613,7 @@ namespace Should.Core.Assertions
         /// <param name="high">The (inclusive) high value of the range</param>
         /// <param name="comparer">The comparer used to evaluate the value's range</param>
         /// <exception cref="NotInRangeException">Thrown when the value is in the given range</exception>
-        public static void NotInRange<T>(T actual,
-                                         T low,
-                                         T high,
-                                         IComparer<T> comparer)
+        public static void NotInRange<T>(T actual, T low, T high, IComparer<T> comparer)
         {
             if (comparer.Compare(low, actual) <= 0 && comparer.Compare(actual, high) <= 0)
                 throw new NotInRangeException(actual, low, high);
@@ -692,8 +647,7 @@ namespace Should.Core.Assertions
         /// <param name="expected">The expected object instance</param>
         /// <param name="actual">The actual object instance</param>
         /// <exception cref="NotSameException">Thrown when the objects are the same instance</exception>
-        public static void NotSame(object expected,
-                                   object actual)
+        public static void NotSame(object expected, object actual)
         {
             if (object.ReferenceEquals(expected, actual))
                 throw new NotSameException();
@@ -716,8 +670,7 @@ namespace Should.Core.Assertions
         /// <param name="expected">The expected object instance</param>
         /// <param name="actual">The actual object instance</param>
         /// <exception cref="SameException">Thrown when the objects are not the same instance</exception>
-        public static void Same(object expected,
-                                object actual)
+        public static void Same(object expected, object actual)
         {
             if (!object.ReferenceEquals(expected, actual))
                 throw new SameException(expected, actual);
@@ -828,8 +781,7 @@ namespace Should.Core.Assertions
         /// <param name="testCode">A delegate to the code to be tested</param>
         /// <returns>The exception that was thrown, when successful</returns>
         /// <exception cref="ThrowsException">Thrown when an exception was not thrown, or when an exception of the incorrect type is thrown</exception>
-        public static T Throws<T>(string userMessage,
-                                  ThrowsDelegateWithReturn testCode) where T : Exception
+        public static T Throws<T>(string userMessage, ThrowsDelegateWithReturn testCode) where T : Exception
         {
             return (T)Throws(typeof(T), testCode);
         }
@@ -841,8 +793,7 @@ namespace Should.Core.Assertions
         /// <param name="testCode">A delegate to the code to be tested</param>
         /// <returns>The exception that was thrown, when successful</returns>
         /// <exception cref="ThrowsException">Thrown when an exception was not thrown, or when an exception of the incorrect type is thrown</exception>
-        public static Exception Throws(Type exceptionType,
-                                       ThrowsDelegate testCode)
+        public static Exception Throws(Type exceptionType, ThrowsDelegate testCode)
         {
             Exception exception = ExceptionRecorder.Record(testCode);
 
@@ -863,8 +814,7 @@ namespace Should.Core.Assertions
         /// <param name="testCode">A delegate to the code to be tested</param>
         /// <returns>The exception that was thrown, when successful</returns>
         /// <exception cref="ThrowsException">Thrown when an exception was not thrown, or when an exception of the incorrect type is thrown</exception>
-        public static Exception Throws(Type exceptionType,
-                                       ThrowsDelegateWithReturn testCode)
+        public static Exception Throws(Type exceptionType, ThrowsDelegateWithReturn testCode)
         {
             Exception exception = ExceptionRecorder.Record(testCode);
 
@@ -905,8 +855,7 @@ namespace Should.Core.Assertions
         /// <param name="condition">The condition to be inspected</param>
         /// <param name="userMessage">The message to be shown when the condition is false</param>
         /// <exception cref="TrueException">Thrown when the condition is false</exception>
-        public static void True(bool condition,
-                                string userMessage)
+        public static void True(bool condition, string userMessage)
         {
             if (!condition)
                 throw new TrueException(userMessage);
