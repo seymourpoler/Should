@@ -179,7 +179,7 @@ namespace Should.Core.Assertions
         {
             if (collection == null)
             {
-                throw new ArgumentNullException(nameof(collection), "cannot be null");
+                throw new ArgumentNullException("collection", "cannot be null");
             }
 
 #pragma warning disable 168

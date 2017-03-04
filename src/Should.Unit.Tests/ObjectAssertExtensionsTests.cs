@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using Should.Core.Exceptions;
 
 namespace Should.Unit.Tests
 {
