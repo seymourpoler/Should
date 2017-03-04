@@ -1,5 +1,4 @@
 ﻿using NUnit.Framework;
-using Should.Core.Exceptions;
 
 namespace Should.Unit.Tests
 {
@@ -35,7 +34,8 @@ namespace Should.Unit.Tests
         [Test]
         public void ShouldBeNull()
         {
-            null.ShouldBeNull();
+			object value;
+            value.ShouldBeNull();
         }
     }
 }
