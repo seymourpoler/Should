@@ -38,5 +38,12 @@ namespace Should.Unit.Tests
 			object value;
             value.ShouldBeNull();
         }
+
+		[Test]
+		public void ShouldNotBeNull()
+		{
+			var value = new string("hello");
+			value.ShouldNotBeNull();
+		}
     }
 }
