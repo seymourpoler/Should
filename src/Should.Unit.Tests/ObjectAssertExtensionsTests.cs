@@ -32,17 +32,17 @@ namespace Should.Unit.Tests
             "Hello everyone".ShouldNotBeType<string>();
         }
 
-        [Test]
-        public void ShouldBeNull()
-        {
-			object value;
-            value.ShouldBeNull();
-        }
+        //[Test]
+        //public void ShouldBeNull()
+        //{
+		//	object value;
+        //    value.ShouldBeNull();
+        //}
 
 		[Test]
 		public void ShouldNotBeNull()
 		{
-			var value = new string("hello");
+			var value = "hello";
 			value.ShouldNotBeNull();
 		}
     }
