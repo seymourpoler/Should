@@ -242,51 +242,6 @@ namespace Should.Core.Assertions
             Assert.InRange(actual, low, high, comparer);
         }
 
-        /// <summary>
-        /// Verifies that an object is not exactly the given type.
-        /// </summary>
-        /// <typeparam name="T">The type the object should not be</typeparam>
-        /// <param name="object">The object to be evaluated</param>
-        /// <exception cref="IsTypeException">Thrown when the object is the given type</exception>
-        public void IsNotType<T>(object @object)
-        {
-            Assert.IsNotType<T>(@object);
-        }
-
-        /// <summary>
-        /// Verifies that an object is not exactly the given type.
-        /// </summary>
-        /// <param name="expectedType">The type the object should not be</param>
-        /// <param name="object">The object to be evaluated</param>
-        /// <exception cref="IsTypeException">Thrown when the object is the given type</exception>
-        public void IsNotType(Type expectedType, object @object)
-        {
-            Assert.IsNotType(expectedType, @object);
-        }
-
-        /// <summary>
-        /// Verifies that an object is exactly the given type (and not a derived type).
-        /// </summary>
-        /// <typeparam name="T">The type the object should be</typeparam>
-        /// <param name="object">The object to be evaluated</param>
-        /// <returns>The object, casted to type T when successful</returns>
-        /// <exception cref="IsTypeException">Thrown when the object is not the given type</exception>
-        public void IsType<T>(object @object)
-        {
-            Assert.IsType<T>(@object);
-        }
-
-        /// <summary>
-        /// Verifies that an object is exactly the given type (and not a derived type).
-        /// </summary>
-        /// <param name="expectedType">The type the object should be</param>
-        /// <param name="object">The object to be evaluated</param>
-        /// <exception cref="IsTypeException">Thrown when the object is not the given type</exception>
-        public void IsType(Type expectedType, object @object)
-        {
-            Assert.IsType(expectedType, @object);
-        }
-
         /// <summary>Verifies that an object is less than the exclusive maximum value.</summary>
         /// <typeparam name="T">The type of the objects to be compared.</typeparam>
         /// <param name="value">The object to be evaluated.</param>
@@ -389,16 +344,6 @@ namespace Should.Core.Assertions
         }
 
         /// <summary>
-        /// Verifies that an object reference is not null.
-        /// </summary>
-        /// <param name="object">The object to be validated</param>
-        /// <exception cref="NotNullException">Thrown when the object is not null</exception>
-        public void NotNull(object @object)
-        {
-            Assert.NotNull(@object);
-        }
-
-        /// <summary>
         /// Verifies that two objects are not the same instance.
         /// </summary>
         /// <param name="expected">The expected object instance</param>
@@ -407,16 +352,6 @@ namespace Should.Core.Assertions
         public void NotSame(object expected, object actual)
         {
             Assert.NotSame(expected, actual);
-        }
-
-        /// <summary>
-        /// Verifies that an object reference is null.
-        /// </summary>
-        /// <param name="object">The object to be inspected</param>
-        /// <exception cref="NullException">Thrown when the object reference is not null</exception>
-        public void Null(object @object)
-        {
-            Assert.Null(@object);
         }
 
         /// <summary>
@@ -467,27 +402,6 @@ namespace Should.Core.Assertions
         public Exception Throws(Type exceptionType, Assert.ThrowsDelegate testCode)
         {
             return Assert.Throws(exceptionType, testCode);
-        }
-
-        /// <summary>
-        /// Verifies that an expression is true.
-        /// </summary>
-        /// <param name="condition">The condition to be inspected</param>
-        /// <exception cref="TrueException">Thrown when the condition is false</exception>
-        public void True(bool condition)
-        {
-            Assert.True(condition);
-        }
-
-        /// <summary>
-        /// Verifies that an expression is true.
-        /// </summary>
-        /// <param name="condition">The condition to be inspected</param>
-        /// <param name="userMessage">The message to be shown when the condition is false</param>
-        /// <exception cref="TrueException">Thrown when the condition is false</exception>
-        public void True(bool condition, string userMessage)
-        {
-            Assert.True(condition, userMessage);
         }
     }
 }

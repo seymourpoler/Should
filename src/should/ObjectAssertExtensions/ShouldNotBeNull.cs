@@ -1,5 +1,4 @@
-﻿using System;
-using Should.Core.Assertions;
+﻿using Should.Core.Assertions;
 
 namespace Should
 {
