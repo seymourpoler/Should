@@ -360,10 +360,10 @@ namespace Should.Core.Assertions
         /// </summary>
         /// <param name="condition">The condition to be tested</param>
         /// <exception cref="FalseException">Thrown if the condition is not false</exception>
-        public static void False(bool condition)
+        /*public static void False(bool condition)
         {
             False(condition, null);
-        }
+        }*/
 
         /// <summary>
         /// Verifies that the condition is false.
