@@ -632,17 +632,6 @@ namespace Should.Core.Assertions
         }
 
         /// <summary>
-        /// Verifies that an object reference is null.
-        /// </summary>
-        /// <param name="object">The object to be inspected</param>
-        /// <exception cref="NullException">Thrown when the object reference is not null</exception>
-        /*public static void Null(object @object)
-        {
-            if (@object != null)
-                throw new NullException(@object);
-        }*/
-
-        /// <summary>
         /// Verifies that two objects are the same instance.
         /// </summary>
         /// <param name="expected">The expected object instance</param>
