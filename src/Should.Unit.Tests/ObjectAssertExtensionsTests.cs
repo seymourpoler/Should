@@ -14,7 +14,7 @@ namespace Should.Unit.Tests
 
         [Test]
         [ExpectedException(typeof(IsTypeException))]
-        public void ThrowsTypeExceptionIfDoesNotShouldBeTypeOf()
+        public void ThrowsTypeExceptionIfDoesNotShouldBeType()
         {
             "Hello everyone".ShouldBeType<int>();
         }
@@ -38,6 +38,14 @@ namespace Should.Unit.Tests
 			var value = (string)null;
             value.ShouldBeNull();
         }
+
+		[Test]
+		[ExpectedException(typeof(NullException))]
+		public void ThrowsNullExceptionWhenShouldBeNull()
+		{
+			var value = "Hello";
+			value.ShouldBeNull();
+		}
 
 		[Test]
 		public void ShouldNotBeNull()

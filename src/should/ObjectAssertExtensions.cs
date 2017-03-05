@@ -265,17 +265,6 @@ namespace Should
         }
 
         /// <summary>
-        /// Verifies that an object is not exactly the given type.
-        /// </summary>
-        /// <param name="object">The object to be evaluated</param>
-        /// <param name="expectedType">The type the object should not be</param>
-        /// <exception cref="IsTypeException">Thrown when the object is the given type</exception>
-        /*public static void ShouldNotBeType(this object @object, Type expectedType)
-        {
-            Assert.IsNotType(expectedType, @object);
-        }*/
-
-        /// <summary>
         /// Verifies that two objects are not equal, using a default comparer.
         /// </summary>
         /// <typeparam name="T">The type of the objects to be compared</typeparam>
