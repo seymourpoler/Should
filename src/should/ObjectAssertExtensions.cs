@@ -113,16 +113,6 @@ namespace Should
         }
 
         /// <summary>
-        /// Verifies that an object reference is null.
-        /// </summary>
-        /// <param name="object">The object to be inspected</param>
-        /// <exception cref="NullException">Thrown when the object reference is not null</exception>
-        //public static void ShouldBeNull(this object @object)
-        //{
-        //    Assert.Null(@object);
-        //}
-
-        /// <summary>
         /// Verifies that two objects are the same instance.
         /// </summary>
         /// <param name="actual">The actual object instance</param>
@@ -263,30 +253,6 @@ namespace Should
         }
 
         /// <summary>
-        /// Verifies that an object reference is not null.
-        /// </summary>
-        /// <param name="object">The object to be validated</param>
-        /// <exception cref="NotNullException">Thrown when the object is not null</exception>
-        //public static T ShouldNotBeNull<T>(this T @object) where T : class
-        //{
-        //    Assert.NotNull(@object);
-        //    return @object;
-        //}
-
-        /// <summary>
-        /// Verifies that an object reference is not null.
-        /// </summary>
-        /// <param name="object">The object to be validated</param>
-        /// <param name="message">The message to show on failure</param>
-        /// <exception cref="NotNullException">Thrown when the object reference is null</exception>
-        public static T ShouldNotBeNull<T>(this T @object, string message) where T : class
-        {
-            Assert.NotNull(@object, message);
-            return @object;
-        }
-
-
-        /// <summary>
         /// Verifies that two objects are not the same instance.
         /// </summary>
         /// <param name="actual">The actual object instance</param>
@@ -304,10 +270,10 @@ namespace Should
         /// <param name="object">The object to be evaluated</param>
         /// <param name="expectedType">The type the object should not be</param>
         /// <exception cref="IsTypeException">Thrown when the object is the given type</exception>
-        public static void ShouldNotBeType(this object @object, Type expectedType)
+        /*public static void ShouldNotBeType(this object @object, Type expectedType)
         {
             Assert.IsNotType(expectedType, @object);
-        }
+        }*/
 
         /// <summary>
         /// Verifies that two objects are not equal, using a default comparer.

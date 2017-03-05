@@ -7,7 +7,7 @@ namespace Should.Unit.Tests
     public class ObjectAssertExtensionsTests
     {
         [Test]
-        public void ShouldBeTypeOf()
+        public void ShouldBeType()
         {
             "Hello everyone".ShouldBeType<string>();
         }
@@ -32,17 +32,25 @@ namespace Should.Unit.Tests
             "Hello everyone".ShouldNotBeType<string>();
         }
 
-        //[Test]
-        //public void ShouldBeNull()
-        //{
-		//	object value;
-        //    value.ShouldBeNull();
-        //}
+        [Test]
+        public void ShouldBeNull()
+        {
+			var value = (string)null;
+            value.ShouldBeNull();
+        }
 
 		[Test]
 		public void ShouldNotBeNull()
 		{
 			var value = "hello";
+			value.ShouldNotBeNull();
+		}
+
+		[Test]
+		[ExpectedException(typeof(NotNullException))]
+		public void ThrowsNotNullExceptionWhenShouldNotBeNull()
+		{
+			var value = (string)null;
 			value.ShouldNotBeNull();
 		}
     }
