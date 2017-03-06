@@ -88,6 +88,7 @@
     <Compile Include="Assertions\Assert.IsNull.cs" />
     <Compile Include="Assertions\Assert.NotNull.cs" />
     <Compile Include="Assertions\Assert.True.cs" />
+    <Compile Include="Assertions\Assert.False.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
