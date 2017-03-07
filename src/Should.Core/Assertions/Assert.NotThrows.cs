@@ -1,10 +1,9 @@
 ﻿using System;
-using Should.Core.Assertions;
 using Should.Core.Exceptions;
 
 namespace Should.Core.Assertions
 {
-	public partial class Assert
+    public partial class Assert
 	{
 		public static void NotThrows<T>(Action action) where T : Exception
 		{
