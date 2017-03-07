@@ -31,5 +31,14 @@ namespace Should.Unit.Tests
 
             list.ShouldNotBeEmpty();
         }
+
+        [Test]
+        [ExpectedException(typeof(NotEmptyException))]
+        public void ThrowsNotEmptyExceptionWhenCollectionIsNotEmpty()
+        {
+            var list = new int[] {};
+
+            list.ShouldNotBeEmpty();
+        }
     }
 }
