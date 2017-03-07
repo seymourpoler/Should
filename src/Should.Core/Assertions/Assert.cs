@@ -668,7 +668,7 @@ namespace Should.Core.Assertions
             int count = 0;
             T result = default(T);
 
-            foreach (T item in collection)
+            foreach (var item in collection)
             {
                 result = item;
                 ++count;
