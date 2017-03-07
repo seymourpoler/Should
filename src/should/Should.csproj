@@ -47,6 +47,7 @@
     <Compile Include="BooleanAssertionExtensions\ShouldBeTrue.cs" />
     <Compile Include="CollectionAssertionExtensions.cs" />
     <Compile Include="CollectionAssertionExtensions\ShouldBeEmpty.cs" />
+    <Compile Include="CollectionAssertionExtensions\ShouldNotBeEmpty.cs" />
     <Compile Include="DateAssertionExtensions.cs" />
     <Compile Include="DoubleAssertionExtensions.cs" />
     <Compile Include="ObjectAssertExtensions.cs" />

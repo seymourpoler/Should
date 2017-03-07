@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using Should.Core.Assertions;
-using Should.Core.Exceptions;
 
 namespace Should.CollectionAssertionExtensions
 {

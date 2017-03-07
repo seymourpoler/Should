@@ -36,16 +36,7 @@ namespace Should
             Assert.Contains(expected, collection, comparer);
         }
 
-        /// <summary>
-        /// Verifies that a collection is not empty.
-        /// </summary>
-        /// <param name="collection">The collection to be inspected</param>
-        /// <exception cref="ArgumentNullException">Thrown when a null collection is passed</exception>
-        /// <exception cref="NotEmptyException">Thrown when the collection is empty</exception>
-        public static void ShouldNotBeEmpty(this IEnumerable collection)
-        {
-            Assert.NotEmpty(collection);
-        }
+        
 
         /// <summary>
         /// Verifies that a collection does not contain a given object.

@@ -23,5 +23,13 @@ namespace Should.Unit.Tests
 
             list.ShouldBeEmpty();
         }
+
+        [Test]
+        public void ShouldNotBeEmpty()
+        {
+            var list = new int[] { 1, 2, 3, 34 };
+
+            list.ShouldNotBeEmpty();
+        }
     }
 }
