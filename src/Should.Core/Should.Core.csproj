@@ -83,8 +83,8 @@
     <Compile Include="Exceptions\TraceAssertException.cs" />
     <Compile Include="Exceptions\TrueException.cs" />
     <Compile Include="Assertions\ExceptionRecorder.cs" />
-    <Compile Include="Assertions\Assert.ShouldThrows.cs" />
-    <Compile Include="Assertions\Assert.ShouldNotThrows.cs" />
+    <Compile Include="Assertions\Assert.Throws.cs" />
+    <Compile Include="Assertions\Assert.NotThrows.cs" />
     <Compile Include="Assertions\Assert.IsNull.cs" />
     <Compile Include="Assertions\Assert.NotNull.cs" />
     <Compile Include="Assertions\Assert.True.cs" />
