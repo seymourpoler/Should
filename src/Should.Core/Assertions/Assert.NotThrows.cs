@@ -22,6 +22,18 @@ namespace Should.Core.Assertions
 			if (exception != null)
 				throw new DoesNotThrowException(exception);
 		}
-	}
+
+        /// <summary>
+        /// Verifies that a block of code does not throw any exceptions.
+        /// </summary>
+        /// <param name="testCode">A delegate to the code to be tested</param>
+        public static void DoesNotThrow(ThrowsDelegate testCode)
+        {
+            Exception ex = ExceptionRecorder.Record(testCode);
+
+            if (ex != null)
+                throw new DoesNotThrowException(ex);
+        }
+    }
 }
 
