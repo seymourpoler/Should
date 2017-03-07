@@ -171,8 +171,10 @@ namespace Should.Core.Assertions
             }
 
 #pragma warning disable 168
-            foreach (object @object in collection)
+            if (collection.Cast<object>().Any())
+            {
                 throw new EmptyException();
+            }
 #pragma warning restore 168
         }
 
