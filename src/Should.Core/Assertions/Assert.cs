@@ -536,8 +536,10 @@ namespace Should.Core.Assertions
             if (collection == null) throw new ArgumentNullException("collection", "cannot be null");
 
 #pragma warning disable 168
-            foreach (object @object in collection)
+            if (collection.Cast<object>().Any())
+            {
                 return;
+            }
 #pragma warning restore 168
 
             throw new NotEmptyException();
