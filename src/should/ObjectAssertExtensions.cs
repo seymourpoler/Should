@@ -129,10 +129,10 @@ namespace Should
         /// <param name="object">The object to be evaluated</param>
         /// <param name="expectedType">The type the object should be</param>
         /// <exception cref="IsTypeException">Thrown when the object is not the given type</exception>
-        public static void ShouldBeType(this object @object, Type expectedType)
-        {
-            Assert.IsType(expectedType, @object);
-        }
+        //public static void ShouldBeType(this object @object, Type expectedType)
+        //{
+        //    Assert.IsType(expectedType, @object);
+        //}
 
         /// <summary>
         /// Verifies that an object is of the given type or a derived type
