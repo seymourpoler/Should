@@ -12,17 +12,6 @@ namespace Should
     public static class CollectionAssertExtensions
     {
         /// <summary>
-        /// Verifies that a collection is empty.
-        /// </summary>
-        /// <param name="collection">The collection to be inspected</param>
-        /// <exception cref="ArgumentNullException">Thrown when the collection is null</exception>
-        /// <exception cref="EmptyException">Thrown when the collection is not empty</exception>
-        public static void ShouldBeEmpty(this IEnumerable collection)
-        {
-            Assert.Empty(collection);
-        }
-
-        /// <summary>
         /// Verifies that a collection contains a given object.
         /// </summary>
         /// <typeparam name="T">The type of the object to be verified</typeparam>
