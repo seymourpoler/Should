@@ -352,7 +352,7 @@ namespace Should.Core.Assertions
         /// <exception cref="FalseException">Thrown if the condition is not false</exception>
         public static void False(bool condition)
         {
-            False(condition, null);
+            False(condition, String.Empty);
         }
 
         static IEqualityComparer<T> GetEqualityComparer<T>()
