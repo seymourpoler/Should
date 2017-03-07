@@ -118,8 +118,7 @@ namespace Should
         /// <param name="actual">The actual object instance</param>
         /// <param name="expected">The expected object instance</param>
         /// <exception cref="SameException">Thrown when the objects are not the same instance</exception>
-        public static void ShouldBeSameAs(this object actual,
-                                          object expected)
+        public static void ShouldBeSameAs(this object actual, object expected)
         {
             Assert.Same(expected, actual);
         }
@@ -130,8 +129,7 @@ namespace Should
         /// <param name="object">The object to be evaluated</param>
         /// <param name="expectedType">The type the object should be</param>
         /// <exception cref="IsTypeException">Thrown when the object is not the given type</exception>
-        public static void ShouldBeType(this object @object,
-                                        Type expectedType)
+        public static void ShouldBeType(this object @object, Type expectedType)
         {
             Assert.IsType(expectedType, @object);
         }
