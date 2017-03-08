@@ -19,7 +19,7 @@ namespace Should.Unit.Tests
         [ExpectedException(typeof (EmptyException))]
         public void ThrowsEmptyExceptionWhenCollectionIsNotEmpty()
         {
-            var list = new int[] {1, 2, 3, 34};
+            var list = new [] {1, 2, 3, 34};
 
             list.ShouldBeEmpty();
         }
@@ -27,7 +27,7 @@ namespace Should.Unit.Tests
         [Test]
         public void ShouldNotBeEmpty()
         {
-            var list = new int[] { 1, 2, 3, 34 };
+            var list = new [] { 1, 2, 3, 34 };
 
             list.ShouldNotBeEmpty();
         }
