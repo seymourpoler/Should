@@ -17,8 +17,8 @@ namespace Should.Core.Assertions
 
             while (true)
             {
-                bool hasNextX = enumeratorX.MoveNext();
-                bool hasNextY = enumeratorY.MoveNext();
+                var hasNextX = enumeratorX.MoveNext();
+                var hasNextY = enumeratorY.MoveNext();
 
                 if (!hasNextX || !hasNextY)
                     return hasNextX == hasNextY;
