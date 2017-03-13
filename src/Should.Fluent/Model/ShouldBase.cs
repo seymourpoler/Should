@@ -50,9 +50,10 @@ namespace Should.Fluent.Model
 
         object IShould<TTarget>.Apply(Func<TTarget, IAssertProvider, object> positiveCase, Func<TTarget, IAssertProvider, object> negativeCase)
         {
-            return negate 
-                ? negativeCase(target, assertProvider) 
-                : positiveCase(target, assertProvider);
+			if (negate) {
+				return negativeCase (target, assertProvider);
+			}
+			return positiveCase (target, assertProvider);
         }
 
         public TTarget Apply(Action<TTarget, IAssertProvider, bool> action)
